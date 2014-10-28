@@ -2,9 +2,13 @@ Rails.application.routes.draw do
   resources :users
 
 
-  root 'pages#home'
-
+  root 'sessions#new'
   get 'users/new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+  #No route matches [POST] "/login"
+
+
  
 
   # The priority is based upon order of creation: first created -> highest priority.
