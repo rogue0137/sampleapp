@@ -1,29 +1,56 @@
- <% if current_user.admin? %>
+ <%= render 'layouts/header' %>
 
-  <h1>Create User</h1>
+   <aside class="right-side">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Dashboard
+                <small>Control panel</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Blank page</li>
+            </ol>
+        </section>
 
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
-      
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+        <!-- Main content -->
+        <section class="content">
 
-        <%= f.label :email %>
-        <%= f.text_field :email %>
+          <% if current_user.admin? %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password %>
+            <h1>Create User</h1>
 
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation %>
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <%= form_for(@user) do |f| %>
+                <%= render 'shared/error_messages' %>
+                
+                  <p><%= f.label :name %></p>
+                  <%= f.text_field :name %><br>
 
-        <%= f.submit "Create account", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
+                  <p><%= f.label :email %></p>
+                  <%= f.text_field :email %><br>
+
+                  <p><%= f.label :password %></p>
+                  <%= f.password_field :password %><br>
+
+                  <p><%= f.label :password_confirmation, "Confirmation" %><p>
+                  <%= f.password_field :password_confirmation %><br>
+
+                  <%= f.submit "Create account", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+           
+          <% else %>
+            <% flash[:danger] = "You do not have access to this page!" %> 
+          <% end %>
+
+        </section><!-- /.content -->
+    </aside><!-- /.right-side -->
+
+<%= render 'layouts/sidebarnav' %>
+
+
+
  
-<% else %>
-  <% flash[:danger] = "You do not have access to this page!" %> 
-<% end %>
