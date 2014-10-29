@@ -1,17 +1,31 @@
-<h1>Log in</h1>
+<div class="container">
+	<div class= "jumbotron">
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
+		<div class ="row">
+			<%= image_tag("HS2logo.jpg", :alt => "hs2logo", class: "img-responsive") %>
+		</div>
+		<div class="row">
+		  
+		  <div class="col-md-6 col-md-offset-3" >
+		    <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+		      <p><%= f.label :email %></p>
+		      <%= f.text_field :email %><br>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+		      <p><%= f.label :password %></p>
+		      <%= f.password_field :password %><br>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
+		      <%= f.submit "Log in", class: "btn btn-primary btn-lg" %>
+		    <% end %>
 
-  </div>
+		  </div>
+		</div>
+		<div class="row" align="center">
+			 <p id="copyright">&copy; HS2 Academy<br> All information on this website is password-protected and<br> confidential to be used only for HS2-related purposes.</p>
+		</div>
+	</div>
 </div>
+
+
+
+

@@ -1,7 +1,4 @@
  <% if current_user.admin? %>
-    
-
-
 
   <h1>Create User</h1>
 
@@ -28,5 +25,5 @@
   </div>
  
 <% else %>
-    <% flash[:danger] = "You do not have access to this page!" %> 
+  <% flash[:danger] = "You do not have access to this page!" %> 
 <% end %>
