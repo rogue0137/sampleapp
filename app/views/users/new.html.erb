@@ -43,7 +43,11 @@
             </div>
            
           <% else %>
-            <% flash[:danger] = "You do not have access to this page!" %> 
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                 <p>"You do not have access to this page!" </p> 
+              </div>
+            </div>
           <% end %>
 
         </section><!-- /.content -->
