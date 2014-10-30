@@ -10,8 +10,24 @@ Rails.application.routes.draw do
   #No route matches [POST] "/login"
   get "dashboard" => "pages#dashboard"
 
-
- 
+  get 'navbar/admincreateclasses'
+  get 'navbar/admindaily'
+  get 'navbar/counselingallstudents'
+  get 'navbar/counselingmystudent'
+  get 'navbar/counselingresources'
+  get 'navbar/hrcreateannouncement'
+  get 'navbar/hrmyclasses'
+  get 'navbar/instructorsmyschedule'
+  get 'navbar/manageadmin'
+  get 'navbar/managecounselors'
+  get 'navbar/managehr'
+  get 'navbar/manageinstructors'
+  get 'navbar/managestudents'
+  get 'navbar/myhr'
+  get 'navbar/statisticsacceptances'
+  get 'navbar/statisticstestscores'
+  get 'navbar/training'
+  get 'navbar/websiteupdates'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
