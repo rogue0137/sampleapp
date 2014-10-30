@@ -10,50 +10,59 @@
           </div>
           <div class="pull-left info">
             <p>Hello, Jane</p>
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
+        </div>
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+              <span class="input-group-btn">
+                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
           </div>
-          <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                <span class="input-group-btn">
-                  <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                </span>
-            </div>
-          </form>
-          <!-- /.search form -->
-          <!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu">
-            <li class="active">
-              <a href="index.html">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-              </a>
-            </li>
-            <!-- Manage Users -->
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-edit"></i> <span>Manage Users</span>
-                <i class="fa fa-angle-right pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li>
-                  <a href="#" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Students</a>
-                </li>
-                <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Instructors</a>
-                </li>
-                <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Counselors</a>
-                </li>
-                <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Admin</a>
-                </li>
-                <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> HR</a>
-                </li>
-              </ul>
-            </li>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a href="#">
+              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            </a>
+          </li>
+          <!-- Manage Users -->
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-edit"></i> <span>Manage Users</span>
+              <i class="fa fa-angle-right pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_to managestudents_path, type: "button", data: {toggle: "expanding"} do %>
+                  <i class="fa fa-angle-double-right"></i> Students
+                <% end %>
+              </li>
+              <li>
+                <%= link_to manageinstructors_path, type: "button", data: {toggle: "expanding"} do %>
+                  <i class="fa fa-angle-double-right"></i> Instructors
+                <% end %>
+              </li>
+              <li>
+                <%= link_to managecounselors_path, type: "button", data: {toggle: "expanding"} do %>
+                  <i class="fa fa-angle-double-right"></i> Counselors
+                <% end %>
+              </li>
+              <li>
+                <%= link_to manageadmin_path, type: "button", data: {toggle: "expanding"} do %>
+                  <i class="fa fa-angle-double-right"></i> Admin
+                <% end %>
+              </li>
+              <li>
+                <%= link_to managehr_path, type: "button", data: {toggle: "expanding"} do %>
+                  <i class="fa fa-angle-double-right"></i> HR
+                <% end %>
+              </li>
+            </ul>
+          </li>
             <!-- Admin -->
             <li class="treeview">
               <a href="#">
@@ -62,16 +71,24 @@
               </a>
               <ul class="treeview-menu">
                 <li>
-                  <a href="#" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Daily</a>
+                  <%= link_to admindaily_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Daily
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Create Classes</a>
+                  <%= link_to admincreateclasses_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Create Classes
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> My HR</a>
+                  <%= link_to myhr_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> My HR
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Admin Training</a>
+                  <%= link_to training_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Admin Training
+                  <% end %> 
                 </li>
               </ul>
             </li>
@@ -83,16 +100,24 @@
               </a>
               <ul class="treeview-menu">
                 <li>
-                  <a href="#" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Create Employee</a>
+                  <%= link_to create_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Create Employee
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Employee Payroll</a>
+                  <%= link_to hrpayroll_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Employee Payroll
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Create Announcement</a>
+                  <%= link_to hrcreateannouncement_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Create Announcement
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> HR Training</a>
+                  <%= link_to training_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> HR Training
+                  <% end %>
                 </li>
               </ul>
             </li>
@@ -104,13 +129,19 @@
               </a>
               <ul class="treeview-menu">
                 <li>
-                  <a href="#" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> My Schedule</a>
+                  <%= link_to instructorsmyschedule_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> My Schedule
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> My Classes</a>
+                  <%= link_to instructorsmyclasses_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> My Classes
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> My HR</a>
+                  <%= link_to myhr_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> My HR
+                  <% end %>
                 </li>
               </ul>
             </li>
@@ -122,19 +153,29 @@
               </a>
               <ul class="treeview-menu">
                 <li>
-                  <a href="#" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> My Students</a>
+                  <%= link_to counselingmystudents_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> My Students
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> All Students</a>
+                  <%= link_to counselingallstudents_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> All Students
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Resources</a>
+                  <%= link_to counselingresources_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Resources
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> My HR</a>
+                  <%= link_to myhr_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> My HR
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Counselor Training</a>
+                  <%= link_to training_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Counselor Training
+                  <% end %>
                 </li>
               </ul>
             </li>
@@ -146,10 +187,14 @@
               </a>
               <ul class="treeview-menu">
                 <li>
-                  <a href="#" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Test Scores</a>
+                  <%= link_to statisticstestscores_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Test Scores
+                  <% end %>
                 </li>
                 <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Branch Acceptances</a>
+                  <%= link_to statisticsacceptances_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Acceptances
+                  <% end %>
                 </li>
               </ul>
             </li>
@@ -161,10 +206,9 @@
               </a>
               <ul class="treeview-menu">
                 <li>
-                  <a href="#" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> Notices</a>
-                </li>
-                <li>
-                  <a href="" type="button" data-toggle="collapse"><i class="fa fa-angle-double-right"></i> How To</a>
+                  <%= link_to websiteupdates_path, type: "button", data: {toggle: "expanding"} do %>
+                    <i class="fa fa-angle-double-right"></i> Notices
+                  <% end %>
                 </li>
               </ul>
             </li>
