@@ -18,20 +18,28 @@
 					    <%= form_for(@user) do |f| %>
 					      <%= render 'shared/error_messages' %>
 
+					     <%= f.label :email %>
+					     <%= f.text_field :email, class: 'form-control' %>
+
+					     <%= f.label :password %>
+					      <%= f.password_field :password, class: 'form-control' %>
+
+					      <%= f.label :password_confirmation, "Password Confirmation" %>
+					      <%= f.password_field :password_confirmation, class: 'form-control' %>
+					       	
 					      <%= f.label :name %>
 					      <%= f.text_field :name, class: 'form-control' %>
 
-					      <%= f.label :email %>
-					      <%= f.text_field :email, class: 'form-control' %>
+					     	<%= f.label :last_name %>
+					      <%= f.text_field :last_name, class: 'form-control' %>
 
 					      <p><%= f.label :phone %></p>
                 <%= f.telephone_field :phone_number, class: 'form-control' %><br>
 
-					      <%= f.label :password %>
-					      <%= f.password_field :password, class: 'form-control' %>
+                  <%= f.label :college_degrees, "College(s) and Degree (s)"  %>
+					      <%= f.text_field :college_degrees, class: 'form-control' %>
 
-					      <%= f.label :password_confirmation, "Confirmation" %>
-					      <%= f.password_field :password_confirmation, class: 'form-control' %>
+					      
 
 					      <%= f.submit "Save changes", class: "btn btn-primary" %>
 					    <% end %>
